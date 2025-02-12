@@ -126,7 +126,7 @@ const femaleCharacters = []
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
   if (starWarsCharacters[i].gender === 'female') {
-    femaleCharacters.push(starWarsCharacters[i].name)
+    femaleCharacters.push(starWarsCharacters[i])
   }
 }
 console.log('Array Females', femaleCharacters)
@@ -136,7 +136,7 @@ console.log('Array Females', femaleCharacters)
   Ad ognuna di queste proprietà assegna come valore un array vuoto.
 */
 
-let eyeColor = {
+const eyeColor = {
   blue: [],
   yellow: [],
   brown: [],
@@ -173,7 +173,7 @@ for (let i = 0; i < starWarsCharacters.length; i++){
       console.log('Colore degli occhi non pervenuto')
 }}
 
-console.log(eyeColor)
+console.log('Oggetto eye color', eyeColor)
 
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
@@ -185,6 +185,7 @@ let i = 0
 
 while (i < starWarsCharacters.length) {
   crewMass += starWarsCharacters[i].mass 
+  // crewMass = crewMass + starWarsCharacters[i].mass funziona uguale
   i++;
 }
 
@@ -205,9 +206,9 @@ console.log('Crewmass:', crewMass)
 
 if ( crewMass < 500) {
   console.log("Ship is under loaded")
-} else if ( crewMass < 700) {
+} else if ( crewMass >= 500 && crewMass < 700) {
   console.log("Ship is half loaded")
-} else if ( crewMass < 900) {
+} else if ( crewMass >= 700 && crewMass < 900) {
   console.log("Warning: Load is over 700")
 } else if ( crewMass < 1000) {
   console.log("Critical Load: Over 900")
@@ -237,9 +238,9 @@ console.log(starWarsCharacters[1].gender)
 // femaleCharacterNames
 
 for (let i = 0; i < femaleCharacters.length; i++) {
-  for (let j = 0; i < charactersNames.length; i++) {
-    if (charactersNames[i] === femaleCharacters[j].name) {
-      charactersNames.pop(femaleCharacters[j])
+  for (let j = 0; j < charactersNames.length; j++) {
+    if (femaleCharacters[i].name === charactersNames[j]) {
+      charactersNames.splice(j, 1)
     }
   }
 }
@@ -254,3 +255,5 @@ console.log(charactersNames)
 let randomCharacter = starWarsCharacters[Math.floor(Math.random() * starWarsCharacters.length)]
 
 console.log(randomCharacter.name + ' is ' + randomCharacter.height + 'cm tall, weights ' + randomCharacter.mass + 'kg, has ' + randomCharacter.hair_color + ' hair, has ' + randomCharacter.eye_color + ' eyes, was born on ' + randomCharacter.birth_year + ' and is a ' + randomCharacter.gender)
+
+
