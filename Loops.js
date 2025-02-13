@@ -257,3 +257,78 @@ let randomCharacter = starWarsCharacters[Math.floor(Math.random() * starWarsChar
 console.log(randomCharacter.name + ' is ' + randomCharacter.height + 'cm tall, weights ' + randomCharacter.mass + 'kg, has ' + randomCharacter.hair_color + ' hair, has ' + randomCharacter.eye_color + ' eyes, was born on ' + randomCharacter.birth_year + ' and is a ' + randomCharacter.gender)
 
 
+// altri esempi di LOOP while
+
+let coin = 'testa'
+let numeroLanci = 0
+
+while (coin === 'testa') {
+  numeroLanci++
+  let numeroCasuale = Math.random()
+
+  if (numeroCasuale < 0.5) { 
+    console.log('Testa!')
+    coin = 'testa'
+    
+  } else {
+    coin = 'croce'
+    console.log('Croce!')
+  }
+}
+
+console.log(' ci sono voluti ' + numeroLanci + ' lanci!')
+
+
+// for loops
+
+const numbers = [4, 78, 11, 46.5, 90, 100]
+
+for (let i=0; i < numbers.length; i++) {
+  console.log(i)
+  console.log(numbers[i])
+}
+
+// another one!
+
+let animalsArray = [
+  {
+    name: 'Fufy',
+    species: dog,
+    age: 2,
+    furColor: brown,
+    numberOfLegs: 4,
+    skills: tail-wagging,
+  },
+  {
+    name: 'Mimi',
+    species: cat,
+    age: 7,
+    furColor: red,
+    numberOfLegs: 4,
+    skills: scratching,
+  },
+  {
+    name: 'Fufy',
+    species: parrot,
+    age: 70,
+    furColor: blue,
+    numberOfLegs: 2,
+    skills: singing,
+  }
+]
+
+
+for (i = 0; i < animalsArray.length; i++) {
+  console.log(animalsArray[i].species)
+}
+
+
+//
+
+let str = ''
+
+for (i=0; i < animalsArray.length; i++) {
+  str = str + animalsArray[i].species + ' '
+}
+
+// str will be str = 'dog cat parrot '
